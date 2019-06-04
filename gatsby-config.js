@@ -7,6 +7,21 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-plugin-less",
+      options : {
+        modifyVars: require("./src/theme/antd.js"),
+        // Needed to load antdesign less files.
+        javascriptEnabled: true,
+      }
+    },
+    {
+      resolve: "gatsby-plugin-antd",
+      options: {
+        // Activate less files
+        style: true,
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
