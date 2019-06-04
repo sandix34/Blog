@@ -17,7 +17,7 @@ import { Layout, Menu, Icon } from "antd"
 
 const { Header, Content, Footer, Sider } = Layout
 
-const GLayout = ({ children }) => (
+const GLayout = ({ children, page }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -32,7 +32,7 @@ const GLayout = ({ children }) => (
       <Layout style={{ minHeight: "100vh" }}>
         <Sider breakpoint="lg" collapsedWidth="0">
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={[page]}>
             <Menu.Item key="1">
               <Link to="/">
                 <Icon type="home" />
