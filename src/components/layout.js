@@ -69,7 +69,7 @@ const GLayout = ({ children, page }) => (
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            Hardcoders ©2019 Created by Antho Welc
+            ©2019 Created by Sandrine Zocca
           </Footer>
         </Layout>
       </Layout>
