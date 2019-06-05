@@ -7,6 +7,11 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: { name: `blog`, path: `${__dirname}/blog/` },
+    },
+    `gatsby-transformer-remark`,
+    {
       resolve: "gatsby-plugin-less",
       options : {
         modifyVars: require("./src/theme/antd.js"),

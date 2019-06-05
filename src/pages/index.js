@@ -8,13 +8,14 @@ import SEO from "../components/seo"
 const IndexPage = ({data}) => (
   <GLayout page="1">
     <SEO title="Home" />
-    <h1>{data.site.siteMetadata.title}</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    {
+      data.allMarkdownRemark.edges.map(({node}) => (
+        <div key={node.id}>
+          <h2>{node.frontmatter.title}</h2>
+          <p>{node.excerpt}</p>
+        </div>
+      ))
+    }
   </GLayout>
 )
 
@@ -23,6 +24,20 @@ query {
   site {
     siteMetadata {
       title
+    }
+  }
+  allMarkdownRemark(sort: { fields: [frontmatter___date],
+  order: DESC }) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          date(formatString: "DD MMMM, YYYY")
+          slug
+        }
+        excerpt
+      }
     }
   }
 }
