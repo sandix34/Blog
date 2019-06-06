@@ -2,20 +2,35 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import GLayout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Bio from "../components/bio"
+
+import { List  } from "antd"
 
 const IndexPage = ({data}) => (
   <GLayout page="1">
     <SEO title="Home" />
-    {
-      data.allMarkdownRemark.edges.map(({node}) => (
-        <div key={node.id}>
-          <h2>{node.frontmatter.title}</h2>
-          <p>{node.excerpt}</p>
-        </div>
-      ))
-    }
+    <List
+      itemLayout="horizontal"
+      dataSource={data.allMarkdownRemark.edges}
+      renderItem={({ node }) => (
+        <List.Item extra=<Link to={node.frontmatter.slug}>Read more</Link>>
+          <List.Item.Meta
+            title={
+              <span style={{ fontSize: "2rem" }}>
+                <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
+              </span>
+            }
+            description={
+              <p style={{ paddingTop: "16px", lineHeight: "1.25" }}>
+                {node.excerpt}
+              </p>
+            }
+          />
+        </List.Item>
+      )}
+    />
+    <Bio />
   </GLayout>
 )
 
