@@ -22,7 +22,7 @@ Un journal complet de mes compétences en développement Web, mon apprentissage,
 |**![](logos/logo-es6.png) ES6**                           | ![done][done]     | ![done][done] |    ![done][done]           |                  |                |                 |
 |**![](logos/logo-react1.png) React**                         | ![done][done]     |  ![done][done]             |    ![done][done]           |                  |                |                 |
 |**![](logos/logo-redux1.png) Redux**                         | ![done][done]                  |               |               |                  |                |                 |        |
-|**![](logos/logo-git.png) Git**                           | ![done][done]     | ![done][done] | ![done][done] |                  |                |                 |        |
+|**![](../static/assets/logo-git.png) Git**                           | ![done][done]     | ![done][done] | ![done][done] |                  |                |                 |        |
 |**![](logos/logo-github.png) GitHub**                        | ![done][done]     | ![done][done] | ![done][done] | ![done][done]    | ![done][done]               |                 |        |
 |**![](logos/logo-webpack3.png) Webpack 4**                       | ![done][done]     | ![done][done] |    ![done][done]           |                  |                |                 |
 |**![](logos/logo-agile.png) Agile**                         | ![done][done]     |               |               |                  |                |                 |        |
